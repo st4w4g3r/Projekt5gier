@@ -1,0 +1,39 @@
+from subprocess import call
+
+
+class CallPy:
+
+    def __init__(self, path):
+        self.path = path
+
+    def call_python_file(self):
+        call(["Python3", f"{self.path}"])
+
+
+if __name__ == "__main__":
+
+    wybor = input("Wybierz nr gierki: ")
+
+    while wybor != "koniec":
+
+        if wybor == "1":
+            path = "menager_gier/zgadnij_jaka_to_liczba.py"
+
+        elif wybor == "2":
+            path = "menager_gier/smocza_kraina.py"
+
+        elif wybor == "3":
+            path = "poszukiwanie_skarbu_sonarem.py"
+
+        elif wybor == "4":
+            path = "menager_gier/pong.py"
+
+        elif wybor == "5":
+            path = "menager_gier/tictactoe.py"
+
+        obiek1 = CallPy(path)
+        obiek1.call_python_file()
+
+        wybor = input("Wybierz nr gierki: ")
+
+    input("dzieki za gre, do nastepnego")
